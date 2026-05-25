@@ -24,7 +24,7 @@
 }
 
 .logo-icon {
-  color: var(--text-primary);
+  color: var(--text-accent);
 }
 
 .sidebar-title-container {
@@ -33,10 +33,24 @@
   gap: 8px;
 }
 
+.sidebar-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-author-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .sidebar-title {
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.2;
+}
+
+.title-accent {
+  color: var(--text-accent);
 }
 
 .sidebar-author {
@@ -84,6 +98,7 @@
   background-color: var(--active-bg);
   border: 1px solid var(--active-border);
   color: var(--text-primary);
+  box-shadow: 0 0 15px rgba(129, 140, 248, 0.15);
 }
 
 /* Main Content Styles */
@@ -156,4 +171,115 @@
   padding: 0 1.5rem 1.5rem 1.5rem;
   border-top: 1px solid var(--border-color);
   background-color: var(--bg-main);
+}
+
+/* Responsive Mobile Layout */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    overflow-y: visible;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 1.25rem;
+  }
+
+  .sidebar-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar-title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    gap: 16px;
+  }
+
+  .sidebar-title-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-author-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+    max-width: 110px;
+    text-align: right;
+  }
+
+  .sidebar-author {
+    font-size: 0.85rem;
+    color: var(--text-accent);
+    line-height: 1.2;
+  }
+
+  /* Hide elements on mobile to match the History Vault design exactly */
+  .sidebar-section-title,
+  .nav-item-predictive-analysis {
+    display: none !important;
+  }
+
+  .sidebar-nav {
+    flex-direction: column-reverse;
+    gap: 0.875rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav-item {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+    border-radius: 8px;
+  }
+
+  .main-content {
+    padding: 2rem 1.25rem;
+    width: 100%;
+  }
+
+  .content-header {
+    margin-bottom: 2rem;
+  }
+
+  .content-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .content-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .accordion-list {
+    width: 100%;
+    max-width: 100%;
+    gap: 0.875rem;
+  }
+
+  .accordion-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .accordion-content {
+    padding: 0 1.25rem 1.25rem 1.25rem;
+  }
 }

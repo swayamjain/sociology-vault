@@ -46,11 +46,11 @@ function App() {
         <div className="sidebar-header">
           <BookOpen className="logo-icon" size={32} />
           <div className="sidebar-title-container">
-            <div>
-              <div className="sidebar-title">Sociology</div>
+            <div className="sidebar-title-group">
+              <div className="sidebar-title title-accent">Sociology</div>
               <div className="sidebar-title">Q&A Vault</div>
             </div>
-            <div>
+            <div className="sidebar-author-container">
               <div className="sidebar-author">CC</div>
               <div className="sidebar-author">Swayam</div>
               <div className="sidebar-author">Jain</div>
@@ -60,7 +60,7 @@ function App() {
 
         <nav className="sidebar-nav">
           <div 
-            className={`nav-item ${activePaper === 'Predictive Analysis' ? 'active' : ''}`}
+            className={`nav-item nav-item-predictive-analysis ${activePaper === 'Predictive Analysis' ? 'active' : ''}`}
             onClick={() => setActivePaper('Predictive Analysis')}
           >
             {getIconForNav('Analysis')}
